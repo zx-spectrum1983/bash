@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# USAGE: $0 workdir
+#
+
+WORKDIR="$1"
+
+#sudo mkdir /mnt/iso$USER
+#sudo umount /dev/sr0
+#sudo mount /dev/sr0 /mnt/iso$USER
+#sudo mkdir -p $WORKDIR/iso/
+#sudo cp -rf /mnt/iso$USER/* $WORKDIR/iso/
+#sudo umount /mnt/iso$USER
+#sudo rm -rf /mnt/iso$USER
+
+#sudo apt install -y squashfs-tools xorriso isolinux
+
+mkdir $WORKDIR/rootfs
+sudo unsquashfs -f -d $WORKDIR/rootfs $WORKDIR/iso/casper/filesystem.squashfs
