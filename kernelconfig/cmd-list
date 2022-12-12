@@ -10,4 +10,8 @@ sudo cp -r /usr/src/linux-source-$(uname -r | cut -d "-" -f1)/debian/ .
 sudo cp -r /usr/src/linux-source-$(uname -r | cut -d "-" -f1)/debian.master/ .
 
 sudo make menuconfig
-sudo make -j $(nproc)
+#sudo make -j $(nproc)
+
+sudo make clean
+sudo make defconfig
+sudo make bindeb-pkg
