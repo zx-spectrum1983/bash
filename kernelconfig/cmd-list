@@ -1,0 +1,13 @@
+sudo apt install git fakeroot build-essential ncurses-dev xz-utils libssl-dev bc flex libelf-dev bison
+
+wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.0.12.tar.xz
+tar xvf linux-6.0.12.tar.xz
+cd linux-6.0.12
+cp /boot/config-$(uname -r) .config
+
+sudo apt install linux-source-$(uname -r  | cut -d "-" -f1)
+sudo cp -r /usr/src/linux-source-$(uname -r | cut -d "-" -f1)/debian/ .
+sudo cp -r /usr/src/linux-source-$(uname -r | cut -d "-" -f1)/debian.master/ .
+
+sudo make menuconfig
+sudo make -j $(nproc)
