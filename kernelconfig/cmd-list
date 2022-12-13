@@ -13,5 +13,4 @@ sudo make menuconfig
 #sudo make -j $(nproc)
 
 sudo make clean
-sudo make defconfig
 sudo make bindeb-pkg

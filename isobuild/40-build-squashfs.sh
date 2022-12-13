@@ -3,8 +3,8 @@
 sudo rm -rf ~/work/iso/casper
 sudo mkdir ~/work/iso/casper
 
-sudo cp ~/work/chroot/boot/vmlinuz-**-**-generic ~/work/iso/casper/vmlinuz
-sudo cp ~/work/chroot/boot/initrd.img-**-**-generic ~/work/iso/casper/initrd
+sudo cp ~/work/chroot/boot/vmlinuz-* ~/work/iso/casper/vmlinuz
+sudo cp ~/work/chroot/boot/initrd.img-* ~/work/iso/casper/initrd
 
 sudo chroot ~/work/chroot dpkg-query -W --showformat='${Package} ${Version}\n' | sudo tee ~/work/iso/casper/filesystem.manifest
 sudo cp -v ~/work/iso/casper/filesystem.manifest ~/work/iso/casper/filesystem.manifest-desktop

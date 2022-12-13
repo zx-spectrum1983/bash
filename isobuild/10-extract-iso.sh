@@ -1,6 +1,7 @@
 #!/bin/bash
 #
 # Usage: $0 ~/ubuntu-22.04.1-desktop-amd64.iso
+# wget https://releases.ubuntu.com/22.04.1/ubuntu-22.04.1-desktop-amd64.iso
 #
 
 ISOFILE="$1"
